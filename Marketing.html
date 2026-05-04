@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Notes — สรุปเนื้อหาออกสอบ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        bg: '#FAFAF9',
+                        card: '#FFFFFF',
+                        border: '#E7E5E4',
+                        muted: '#78716C',
+                        accent: '#1C1917',
+                        highlight: '#FEF3C7',
+                        highlightBorder: '#F59E0B',
+                        tag: '#F5F5F4',
+                        tagActive: '#1C1917',
+                        tagActiveText: '#FAFAF9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scrollbar-width: thin; scrollbar-color: #D6D3D1 transparent; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #D6D3D1; border-radius: 3px; }
+        
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: #FAFAF9;
+            color: #1C1917;
+        }
+
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+
+        .key-term {
+            background: #FEF3C7;
+            border-left: 3px solid #F59E0B;
+            padding: 2px 10px;
+            border-radius: 0 6px 6px 0;
+            font-weight: 600;
+            color: #92400E;
+        }
+
+        .section-card {
+            background: #FFFFFF;
+            border: 1px solid #E7E5E4;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+
+        .nav-link {
+            transition: all 0.2s ease;
+            border-radius: 10px;
+            padding: 10px 16px;
+            display: block;
+            font-size: 14px;
+            color: #78716C;
+            cursor: pointer;
+        }
+        .nav-link:hover { background: #F5F5F4; color: #1C1917; }
+        .nav-link.active { background: #1C1917; color: #FAFAF9; font-weight: 500; }
+
+        .sub-nav-link {
+            display: block;
+            padding: 6px 16px 6px 32px;
+            font-size: 13px;
+            color: #A8A29E;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            border-radius: 6px;
+        }
+        .sub-nav-link:hover { color: #57534E; background: #F5F5F4; }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 14px;
+        }
+        thead th {
+            background: #F5F5F4;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #57534E;
+            border-bottom: 2px solid #E7E5E4;
+        }
+        thead th:first-child { border-radius: 10px 0 0 0; }
+        thead th:last-child { border-radius: 0 10px 0 0; }
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F5F5F4;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: #FAFAF9; }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #1C1917;
+            color: #FAFAF9;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .chain-arrow {
+            display: inline-flex;
+            align-items: center;
+            color: #A8A29E;
+            margin: 0 6px;
+        }
+
+        .lecture-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .search-box {
+            background: #F5F5F4;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            padding: 10px 16px 10px 40px;
+            width: 100%;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-box:focus {
+            border-color: #D6D3D1;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+        }
+
+        .mobile-nav { display: none; }
+
+        @media (max-width: 1023px) {
+            .desktop-sidebar { display: none; }
+            .mobile-nav { display: flex; }
+            .main-content { margin-left: 0 !important; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tooltip {
+            position: relative;
+        }
+        .tooltip::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            background: #1C1917;
+            color: #FAFAF9;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+        .tooltip:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: #1C1917;
+            color: #FAFAF9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+            z-index: 40;
+            border: none;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: #292524;
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #F59E0B;
+            z-index: 100;
+            transition: width 0.1s linear;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 60;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 300px;
+            max-width: 85vw;
+            background: #FAFAF9;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            padding: 24px;
+        }
+        .mobile-menu.open .mobile-menu-panel {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav fixed top-0 left-0 right-0 bg-bg/80 backdrop-blur-xl border-b border-border z-50 px-4 py-3 items-center gap-3">
+    <button onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-tag transition-colors">
+        <span class="iconify" data-icon="lucide:menu" data-width="20"></span>
+    </button>
+    <span class="font-outfit font-semibold text-sm">Marketing Notes</span>
+    <div class="flex-1"></div>
+    <div class="relative">
+        <span class="iconify absolute left-3 top-1/2 -translate-y-1/2 text-muted" data-icon="lucide:search" data-width="16"></span>
+        <input type="text" placeholder="ค้นหา..." class="search-box w-40 text-sm" style="padding-left: 32px; padding-top: 8px; padding-bottom: 8px;" oninput="handleSearch(this.value)">
+    </div>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMobileMenu()">
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="flex items-center justify-between mb-6">
+            <span class="font-outfit font-bold text-lg">เนื้อหาทั้งหมด</span>
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-tag transition-colors">
+                <span class="iconify" data-icon="lucide:x" data-width="20"></span>
+            </button>
+        </div>
+        <div id="mobileNavContent"></div>
+    </div>
+</div>
+
+<!-- Desktop Sidebar -->
+<aside class="desktop-sidebar fixed top-0 left-0 bottom-0 w-[280px] bg-bg border-r border-border z-40 flex flex-col overflow-hidden">
+    <!-- Logo -->
+    <div class="px-6 pt-6 pb-4">
+        <div class="flex items-center gap-3 mb-1">
+            <div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center">
+                <span class="iconify text-bg" data-icon="lucide:book-open" data-width="18"></span>
+            </div>
+            <div>
+                <h1 class="font-outfit font-bold text-[15px] leading-tight">Marketing Notes</h1>
+                <p class="text-[11px] text-muted font-outfit">Principles of Marketing</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="px-5 pb-4">
+        <div class="relative">
+            <span class="iconify absolute left-3 top-1/2 -translate-y-1/2 text-muted" data-icon="lucide:search" data-width="15"></span>
+            <input type="text" placeholder="ค้นหาเนื้อหา..." class="search-box" oninput="handleSearch(this.value)">
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex-1 overflow-y-auto px-3 pb-6" id="sidebarNav">
+        <!-- Filled by JS -->
+    </nav>
+
+    <!-- Footer -->
+    <div class="px-5 py-4 border-t border-border">
+        <div class="flex items-center gap-2 text-xs text-muted">
+            <span class="iconify" data-icon="lucide:graduation-cap" data-width="14"></span>
+            <span>สรุปเนื้อหาเตรียมออกสอบ</span>
+        </div>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content lg:ml-[280px] min-h-screen" style="padding-top: 72px;">
+    <div class="max-w-[780px] mx-auto px-6 lg:px-10 pb-32">
+
+        <!-- Header -->
+        <div class="mb-10 fade-in">
+            <p class="text-muted text-sm mb-2 font-outfit">Lecture 05 — 09</p>
+            <h2 class="font-outfit font-bold text-3xl lg:text-4xl text-accent leading-tight mb-3">Principles of<br>Marketing</h2>
+            <p class="text-muted text-[15px] leading-relaxed max-w-[500px]">สรุปเนื้อหาทั้งหมด 5 บท พร้อม highlight ใจความสำคัญ เอาไว้อ่านก่อนสอบได้เลย</p>
+            <div class="flex flex-wrap gap-2 mt-5">
+                <span class="lecture-badge bg-amber-50 text-amber-700 border border-amber-200">L05 — Customer Value</span>
+                <span class="lecture-badge bg-blue-50 text-blue-700 border border-blue-200">L06 — Product Life Cycle</span>
+                <span class="lecture-badge bg-emerald-50 text-emerald-700 border border-emerald-200">L07 — Pricing</span>
+                <span class="lecture-badge bg-violet-50 text-violet-700 border border-violet-200">L08 — Channels</span>
+                <span class="lecture-badge bg-rose-50 text-rose-700 border border-rose-200">L09 — Communications</span>
+            </div>
+        </div>
+
+        <div id="searchResults" class="hidden mb-8"></div>
+
+        <!-- ============================================ -->
+        <!-- LECTURE 05 -->
+        <!-- ============================================ -->
+        <div class="lecture-section" data-lecture="5">
+            <div class="flex items-center gap-3 mb-6 fade-in">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                    <span class="font-outfit font-bold text-amber-700 text-sm">05</span>
+                </div>
+                <div>
+                    <h2 class="font-outfit font-bold text-xl text-accent">Building Customer Value</h2>
+                    <p class="text-muted text-xs font-outfit">Product, Service, Branding</p>
+                </div>
+            </div>
+
+            <!-- 1. Product vs Service -->
+            <div class="section-card fade-in" id="l05-1">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">1. Product vs Service</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-2">Product</p>
+                        <p class="text-sm leading-relaxed mt-2">สิ่งเสนอขายในตลาดเพื่อสนองความต้องการ <strong>มีตัวตนจับต้องได้</strong> เป็นหัวใจของ market offering</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-2">Service</p>
+                        <p class="text-sm leading-relaxed mt-2">กิจกรรมหรือประโยชน์ที่เสนอขาย <strong>ไม่มีตัวตน</strong> และ<strong>ไม่ทำให้ผู้ซื้อได้กรรมสิทธิ์</strong>ใดๆ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Levels of Product -->
+            <div class="section-card fade-in" id="l05-2">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">2. ระดับของสินค้าและบริการ</h3>
+                <p class="text-muted text-sm mb-5">มี 3 ระดับ จากในสุดออกมาข้างนอก</p>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="font-outfit font-bold text-amber-700 text-xs">1</span>
+                        </div>
+                        <div>
+                            <p class="key-term inline-block mb-1">Core benefit</p>
+                            <p class="text-sm leading-relaxed">ประโยชน์หลักที่ลูกค้าต้องการ เช่น โทรศัพท์ → การสื่อสาร</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="font-outfit font-bold text-amber-700 text-xs">2</span>
+                        </div>
+                        <div>
+                            <p class="key-term inline-block mb-1">Actual product</p>
+                            <p class="text-sm leading-relaxed">ตัวสินค้าจริง ประกอบด้วย <strong>คุณภาพ ฟีเจอร์ ดีไซน์ บรรจุภัณฑ์ ชื่อแบรนด์</strong></p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="font-outfit font-bold text-amber-700 text-xs">3</span>
+                        </div>
+                        <div>
+                            <p class="key-term inline-block mb-1">Augmented product</p>
+                            <p class="text-sm leading-relaxed">สิ่งเพิ่มเติม เช่น <strong>การรับประกัน การติดตั้ง การจัดส่ง บริการหลังการขาย</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ประเภทสินค้า -->
+            <div class="section-card fade-in" id="l05-3">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">3. ประเภทสินค้า</h3>
+                
+                <p class="font-outfit font-semibold text-sm text-accent mb-3">สินค้าอุปโภคบริโภค (Consumer Products) — 4 ประเภท</p>
+                <div class="overflow-x-auto mb-6">
+                    <table>
+                        <thead>
+                            <tr><th>ประเภท</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><span class="key-term text-xs">Convenience</span></td><td>ซื้อบ่อย รวดเร็ว ไม่เปรียบเทียบ</td><td>สบู่ ขนม น้ำดื่ม</td></tr>
+                            <tr><td><span class="key-term text-xs">Shopping</span></td><td>เปรียบเทียบคุณภาพ ราคา สไตล์ก่อนซื้อ</td><td>เสื้อผ้า เครื่องใช้ไฟฟ้า</td></tr>
+                            <tr><td><span class="key-term text-xs">Speciality</span></td><td>เอกลักษณ์พิเศษ ยินดีออกแรงหา</td><td>รถหรู นาฬิกา Rolex</td></tr>
+                            <tr><td><span class="key-term text-xs">Unsought</span></td><td>ไม่รู้จักหรือไม่คิดจะซื้อ</td><td>ประกันชีวิต โลงศพ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">สินค้าอุตสาหกรรม (Industrial Products)</p>
+                <p class="text-sm text-muted leading-relaxed">ซื้อเพื่อนำไป<strong>ผลิตต่อ</strong>หรือใช้ในธุรกิจ เช่น <strong>วัตถุดิบ สินค้าเกษตร ชิ้นส่วนประกอบ</strong></p>
+            </div>
+
+            <!-- 4. ประเภทของ Marketing -->
+            <div class="section-card fade-in" id="l05-4">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">4. ประเภทของ Marketing</h3>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Organisation marketing</p>
+                        <p class="text-sm text-muted mt-1">สร้างและรักษาทัศนคติต่อองค์กร</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Person marketing</p>
+                        <p class="text-sm text-muted mt-1">เปลี่ยนทัศนคติที่มีต่อบุคคล เช่น นักการเมือง</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Place marketing</p>
+                        <p class="text-sm text-muted mt-1">สร้างทัศนคติต่อสถานที่ เช่น การท่องเที่ยว</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Social marketing</p>
+                        <p class="text-sm text-muted mt-1">ใช้หลักการตลาดเพื่อเปลี่ยนพฤติกรรมสังคม</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Product Decisions -->
+            <div class="section-card fade-in" id="l05-5">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">5. การตัดสินใจเรื่องสินค้าและบริการ</h3>
+                
+                <p class="font-outfit font-semibold text-sm text-accent mb-3">5.1 Individual Product Decisions — 5 ขั้นตอน</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-start gap-3">
+                        <span class="step-num">1</span>
+                        <div><span class="key-term text-xs">Product attributes</span> — คุณภาพ, ฟีเจอร์, สไตล์, ดีไซน์</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num">2</span>
+                        <div><span class="key-term text-xs">Branding</span> — ชื่อ สัญลักษณ์ ที่ระบุตัวตนและทำให้แตกต่าง</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num">3</span>
+                        <div><span class="key-term text-xs">Packaging</span> — บรรจุภัณฑ์ที่สร้าง competitive advantage</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num">4</span>
+                        <div><span class="key-term text-xs">Labeling</span> — ฉลากบอกข้อมูล ผู้ผลิต วันผลิต ส่วนประกอบ</div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num">5</span>
+                        <div><span class="key-term text-xs">Product support services</span> — บริการสนับสนุน เช่น โทรศัพท์ อีเมล</div>
+                    </div>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-3">5.2 Product Line Decisions</p>
+                <p class="text-sm text-muted leading-relaxed mb-2"><span class="key-term text-xs">Product line</span> = กลุ่มสินค้าที่เกี่ยวข้องกัน ทำหน้าที่คล้ายกัน ขายกลุ่มลูกค้าเดียวกัน</p>
+                <div class="grid sm:grid-cols-2 gap-3 mb-6">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Line filling</p>
+                        <p class="text-sm text-muted mt-1">เพิ่มสินค้าใน<strong>ช่วงราคาเดิม</strong></p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Line stretching</p>
+                        <p class="text-sm text-muted mt-1">ขยายออก<strong>นอกช่วงราคาเดิม</strong></p>
+                    </div>
+                </div>
+                <p class="text-xs text-muted">ตัวอย่าง: iPhone SE → iPhone → Plus → Pro → Pro Max</p>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-3 mt-6">5.3 Product Mix Decisions — 3 มิติ</p>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead><tr><th>มิติ</th><th>ความหมาย</th><th>ตัวอย่าง Apple</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="key-term text-xs">Width</span></td><td>จำนวน product lines</td><td>iPhone, Mac, iPad, Watch</td></tr>
+                            <tr><td><span class="key-term text-xs">Length</span></td><td>จำนวนสินค้ารวมทั้งหมด</td><td>—</td></tr>
+                            <tr><td><span class="key-term text-xs">Depth</span></td><td>จำนวน version ของแต่ละสินค้า</td><td>iPhone หลายสี หลายความจุ</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 6. Service Marketing -->
+            <div class="section-card fade-in" id="l05-6">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">6. Service Marketing</h3>
+                
+                <p class="font-outfit font-semibold text-sm text-accent mb-1">คุณลักษณะของบริการ — จำง่ายๆ ว่า <span class="key-term">IIVP</span></p>
+                <div class="overflow-x-auto mb-6">
+                    <table>
+                        <thead><tr><th>คุณลักษณะ</th><th>ความหมาย</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="key-term text-xs">Intangibility</span></td><td>จับต้องไม่ได้ก่อนซื้อ ไม่เห็น ไม่ได้ยิน ไม่สัมผัส</td></tr>
+                            <tr><td><span class="key-term text-xs">Inseparability</span></td><td>แยกจากผู้ให้บริการไม่ได้ ต้องเกิดพร้อมกัน</td></tr>
+                            <tr><td><span class="key-term text-xs">Variability</span></td><td>คุณภาพแตกต่างกันตามผู้ให้บริการ เวลา สถานที่</td></tr>
+                            <tr><td><span class="key-term text-xs">Perishability</span></td><td>เก็บสต็อคไม่ได้ ขายทีหลังไม่ได้</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Service Profit Chain</p>
+                <div class="bg-tag rounded-xl p-4 mb-4">
+                    <div class="flex flex-wrap items-center gap-1 text-sm font-medium">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-lg text-xs">Internal Service Quality</span>
+                        <span class="chain-arrow">→</span>
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-lg text-xs">Satisfied Employees</span>
+                        <span class="chain-arrow">→</span>
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-lg text-xs">Greater Service Value</span>
+                        <span class="chain-arrow">→</span>
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-lg text-xs">Satisfied & Loyal Customers</span>
+                        <span class="chain-arrow">→</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-lg text-xs">Healthy Profit & Growth</span>
+                    </div>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">ประเภท Service Marketing</p>
+                <div class="grid sm:grid-cols-3 gap-3">
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Internal marketing</p>
+                        <p class="text-xs text-muted mt-1">จูงใจพนักงานให้บริการดี</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">External marketing</p>
+                        <p class="text-xs text-muted mt-1">โปรโมทเพื่อดึงดูดลูกค้า</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Interactive marketing</p>
+                        <p class="text-xs text-muted mt-1">ฝึกพนักงานบริการมีคุณภาพ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Branding -->
+            <div class="section-card fade-in" id="l05-7">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">7. Branding</h3>
+                
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Brand Equity</p>
+                        <p class="text-sm text-muted mt-1">มูลค่าแบรนด์ในสายตาลูกค้า เช่น Apple ขาย iPhone $1,200 ขณะที่สมาร์ทโฟนทั่วไป $400</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Brand Valuation</p>
+                        <p class="text-sm text-muted mt-1">ประเมินมูลค่าทางการเงินของแบรนด์</p>
+                    </div>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Brand Positioning — 3 ระดับ</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="step-num">1</span><span class="text-sm"><strong>Attributes</strong> — คุณสมบัติของสินค้า</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="step-num">2</span><span class="text-sm"><strong>Benefits</strong> — ประโยชน์ที่ได้รับ</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="step-num">3</span><span class="text-sm"><strong>Beliefs and values</strong> — ความเชื่อและค่านิยม</span>
+                    </div>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Brand Name Selection — คุณสมบัติที่ควรมี</p>
+                <p class="text-sm text-muted leading-relaxed mb-6">ง่าย · จดจำได้ · มีเอกลักษณ์ · เหมาะสม · มีความหมาย · บอกประโยชน์ได้ · ออกเสียงง่าย · แปลได้หลายภาษา · จดทะเบียนได้</p>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Brand Development Strategy</p>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead><tr><th></th><th>Category เดิม</th><th>Category ใหม่</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-outfit font-semibold text-xs">Brand name เดิม</td>
+                                <td><span class="key-term text-xs">Line extension</span><br><span class="text-xs text-muted">เช่น Coca-Cola Zero</span></td>
+                                <td><span class="key-term text-xs">Brand extension</span><br><span class="text-xs text-muted">เช่น Apple ทำ Watch</span></td>
+                            </tr>
+                            <tr>
+                                <td class="font-outfit font-semibold text-xs">Brand name ใหม่</td>
+                                <td><span class="key-term text-xs">Multibrands</span><br><span class="text-xs text-muted">เช่น P&G: Pantene, H&S</span></td>
+                                <td><span class="key-term text-xs">New brands</span><br><span class="text-xs text-muted">สร้างแบรนด์ใหม่เมื่อเดิมเสื่อม</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- LECTURE 06 -->
+        <!-- ============================================ -->
+        <div class="lecture-section mt-16" data-lecture="6">
+            <div class="flex items-center gap-3 mb-6 fade-in">
+                <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                    <span class="font-outfit font-bold text-blue-700 text-sm">06</span>
+                </div>
+                <div>
+                    <h2 class="font-outfit font-bold text-xl text-accent">Product Life Cycle</h2>
+                    <p class="text-muted text-xs font-outfit">NPD, PLC Stages & Strategies</p>
+                </div>
+            </div>
+
+            <!-- 1-2. NPD -->
+            <div class="section-card fade-in" id="l06-1">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">1. New Product Development (NPD)</h3>
+                <p class="text-sm text-muted leading-relaxed mb-4">การพัฒนาสินค้าใหม่จากความพยายามของบริษัทเอง ครอบคลุมสินค้าต้นฉบับ การปรับปรุง การดัดแปลง และการสร้างแบรนด์ใหม่ — <strong>จำเป็นสำหรับการอยู่รอดของบริษัท</strong></p>
+            </div>
+
+            <!-- 8 ขั้น -->
+            <div class="section-card fade-in" id="l06-2">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">2. ขั้นตอน NPD — 8 ขั้น</h3>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">01</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Idea Generation</span><p class="text-sm text-muted mt-1">ค้นหาไอเดียอย่างเป็นระบบ — ภายใน: R&D, ทีมขาย · ภายนอก: ซัพพลายเออร์, คู่แข่ง, <strong>Crowdsourcing</strong></p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">02</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Idea Screening</span><p class="text-sm text-muted mt-1">กรองไอเดีย — คัดเลือกที่ดี ตัดทิ้งที่ไม่ดี</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">03</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Concept Development & Testing</span><p class="text-sm text-muted mt-1">พัฒนา <strong>Product concept</strong> แล้วทดสอบกับกลุ่มเป้าหมาย</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">04</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Marketing Strategy Development</span><p class="text-sm text-muted mt-1">ออกแบบกลยุทธ์เบื้องต้น 3 ส่วน: ตลาดเป้าหมาย+value proposition · งบประมาณ · marketing mix ระยะยาว</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">05</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Business Analysis</span><p class="text-sm text-muted mt-1">วิเคราะห์ยอดขาย ต้นทุน กำไรที่คาดการณ์</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">06</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Product Development</span><p class="text-sm text-muted mt-1">พัฒนา concept → สินค้าจริง</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">07</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Test Marketing</span><p class="text-sm text-muted mt-1">ทดสอบในตลาดจริง — <strong>Controlled</strong> และ <strong>Simulated</strong> test markets</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#2563EB">08</span>
+                        <div><span class="key-term text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Commercialization</span><p class="text-sm text-muted mt-1">นำสินค้าออกสู่ตลาดจริง</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. บริหาร NPD -->
+            <div class="section-card fade-in" id="l06-3">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">3. การบริหาร NPD — 3 แนวทาง</h3>
+                <div class="grid gap-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Customer-Centred NPD</p>
+                        <p class="text-sm text-muted mt-1">เริ่มจาก<strong>ความต้องการลูกค้า</strong> ไม่ใช่ไอเดียสินค้า มุ่งแก้ปัญหาลูกค้า</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Team-Based NPD</p>
+                        <p class="text-sm text-muted mt-1">หลายแผนกร่วมกัน <strong>ทับซ้อนขั้นตอน</strong> ประหยัดเวลา · แนวคิด: ทลาย silos</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Systematic NPD</p>
+                        <p class="text-sm text-muted mt-1">มี<strong>กระบวนการที่มีโครงสร้างชัดเจน</strong> ประสานงานได้ดีกว่าแบบสะเปะสะปะ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4-5. PLC Stages -->
+            <div class="section-card fade-in" id="l06-4">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">4-5. Product Life Cycle — 5 ระยะ</h3>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr><th>ระยะ</th><th>ยอดขาย</th><th>กำไร</th><th>ลูกค้า</th><th>คู่แข่ง</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="key-term text-xs">Development</span></td>
+                                <td class="text-muted">0</td>
+                                <td class="text-muted">—</td>
+                                <td class="text-muted">—</td>
+                                <td class="text-muted">—</td>
+                            </tr>
+                            <tr>
+                                <td><span class="key-term text-xs">Introduction</span></td>
+                                <td>ต่ำ เติบโตช้า</td>
+                                <td class="text-red-600">ติดลบ/ต่ำมาก</td>
+                                <td>Innovators</td>
+                                <td>น้อยมาก</td>
+                            </tr>
+                            <tr>
+                                <td><span class="key-term text-xs">Growth</span></td>
+                                <td>เพิ่มรวดเร็ว</td>
+                                <td class="text-green-600">เพิ่มขึ้น</td>
+                                <td>Early adopters</td>
+                                <td>เพิ่มขึ้น</td>
+                            </tr>
+                            <tr>
+                                <td><span class="key-term text-xs">Maturity</span></td>
+                                <td>สูงสุด (Peak) ชะลอตัว</td>
+                                <td class="text-green-600">สูง</td>
+                                <td>Middle majority</td>
+                                <td>มาก → เริ่มลด</td>
+                            </tr>
+                            <tr>
+                                <td><span class="key-term text-xs">Decline</span></td>
+                                <td class="text-red-600">ลดลง/ศูนย์</td>
+                                <td class="text-red-600">ลดลง</td>
+                                <td>Laggards</td>
+                                <td>ลดลง</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 6. PLC Strategies -->
+            <div class="section-card fade-in" id="l06-5">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">6. กลยุทธ์การตลาดในแต่ละระยะ PLC</h3>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead><tr><th>ด้าน</th><th>Introduction</th><th>Growth</th><th>Maturity</th><th>Decline</th></tr></thead>
+                        <tbody>
+                            <tr><td class="font-outfit font-semibold text-xs">Product</td><td>พื้นฐาน</td><td>เพิ่ม extensions, warranty</td><td>Diversify แบรนด์และรุ่น</td><td>Phase out ที่อ่อนแอ</td></tr>
+                            <tr><td class="font-outfit font-semibold text-xs">Price</td><td>Cost-plus</td><td>เจาะตลาด</td><td>แข่ง/ต่ำกว่าคู่แข่ง</td><td>ลดราคา</td></tr>
+                            <tr><td class="font-outfit font-semibold text-xs">Distribution</td><td>Selective</td><td>Intensive</td><td>More intensive</td><td>Selective เฉพาะจุด</td></tr>
+                            <tr><td class="font-outfit font-semibold text-xs">Advertising</td><td>สร้าง awareness ใน innovators</td><td>สร้าง awareness mass market</td><td>เน้นความแตกต่าง</td><td>ลด เหลือรักษา loyal</td></tr>
+                            <tr><td class="font-outfit font-semibold text-xs">Sales Promo</td><td>Heavy promotion</td><td>ลด (demand สูงอยู่)</td><td>เพิ่ม brand switching</td><td>ลดให้น้อยสุด</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 7-8. PLC Other -->
+            <div class="section-card fade-in" id="l06-6">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">7-8. PLC ในรูปแบบอื่น & ต่างประเทศ</h3>
+                <div class="grid sm:grid-cols-3 gap-3 mb-5">
+                    <div class="bg-tag rounded-xl p-4 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Style</p>
+                        <p class="text-xs text-muted mt-1">รูปแบบพื้นฐานเฉพาะตัว</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Fashion</p>
+                        <p class="text-xs text-muted mt-1">สไตล์ที่นิยมในช่วงเวลาหนึ่ง</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Fad</p>
+                        <p class="text-xs text-muted mt-1">กระแสชั่วคราว ขึ้นสูงมาก หายเร็ว</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <p class="text-sm leading-relaxed text-blue-900"><strong>ตลาดต่างประเทศ:</strong> สินค้าอาจต้อง<strong>ปรับให้เข้ากับท้องถิ่น</strong> ระวังเรื่องบรรจุภัณฑ์ การแปลภาษา ความหมายโลโก้ที่ต่างกันในแต่ละวัฒนธรรม</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-3">
+                    <p class="text-sm leading-relaxed text-amber-900"><span class="iconify inline-block mr-1" data-icon="lucide:lightbulb" data-width="14"></span><strong>Key Takeaway:</strong> แต่ละระยะใช้กลยุทธ์ต่างกัน — ปรับ pricing, promotion, distribution ให้เหมาะสม · <strong>Innovation ยืดอายุสินค้า</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- LECTURE 07 -->
+        <!-- ============================================ -->
+        <div class="lecture-section mt-16" data-lecture="7">
+            <div class="flex items-center gap-3 mb-6 fade-in">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                    <span class="font-outfit font-bold text-emerald-700 text-sm">07</span>
+                </div>
+                <div>
+                    <h2 class="font-outfit font-bold text-xl text-accent">Pricing Strategies</h2>
+                    <p class="text-muted text-xs font-outfit">Considerations, Methods, Adjustments</p>
+                </div>
+            </div>
+
+            <!-- 1. บทนำ -->
+            <div class="section-card fade-in" id="l07-1">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">1. ราคาคืออะไร</h3>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-3">
+                    <p class="text-sm leading-relaxed text-emerald-900"><strong>ราคา</strong> = จำนวนเงินเรียกสำหรับผลิตภัณฑ์/บริการ · สัญญาแลกเปลี่ยนมูลค่า</p>
+                </div>
+                <p class="text-sm text-muted leading-relaxed"><strong>ราคาเป็นองค์ประกอบเดียวใน Marketing Mix ที่สร้างรายได้</strong> (อื่นเป็นต้นทุน) · ราคาที่ดีเริ่มจาก<strong>การรับรู้มูลค่าของลูกค้า</strong></p>
+            </div>
+
+            <!-- 2. Considerations -->
+            <div class="section-card fade-in" id="l07-2">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">2. การพิจารณากำหนดราคา</h3>
+                
+                <div class="space-y-3 mb-5">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Value-Based Pricing</p>
+                        <p class="text-sm text-muted mt-1">กำหนดตาม<strong>การรับรู้ของผู้ซื้อ</strong> ไม่ใช่ต้นทุนผู้ขาย</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Good-Value Pricing</p>
+                        <p class="text-sm text-muted mt-1">คุณภาพ+บริการดี ในราคาเป็นธรรม เช่น McDonald's</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Value-Added Pricing</p>
+                        <p class="text-sm text-muted mt-1">เพิ่มคุณสมบัติ/บริการเพื่อแยกความแตกต่าง คิดราคาสูงขึ้น เช่น Starbucks</p>
+                    </div>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Cost-Based Pricing — ส่วนประกอบต้นทุน</p>
+                <div class="grid sm:grid-cols-3 gap-3 mb-4">
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Fixed Costs</p>
+                        <p class="text-xs text-muted mt-1">เช่า เงินเดือน สาธารณูปโภค</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Variable Costs</p>
+                        <p class="text-xs text-muted mt-1">วัตถุดิบ แรงงาน (เปลี่ยนตามปริมาณ)</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-3 text-center">
+                        <p class="key-term text-xs inline-block mb-1">Total Costs</p>
+                        <p class="text-xs text-muted mt-1">Fixed + Variable</p>
+                    </div>
+                </div>
+                <div class="bg-tag rounded-xl p-4">
+                    <p class="text-sm"><span class="key-term text-xs">Price Ceiling</span> = อุปสงค์ไม่มีเหนือราคานี้ &nbsp;·&nbsp; <span class="key-term text-xs">Price Floor</span> = ไม่มีกำไรต่ำกว่าราคานี้</p>
+                </div>
+            </div>
+
+            <!-- 3. Methods -->
+            <div class="section-card fade-in" id="l07-3">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">3. วิธีการกำหนดราคา</h3>
+                <div class="space-y-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Cost-Plus Pricing</p>
+                        <p class="text-sm text-muted mt-1">เพิ่มมาร์กอัปมาตรฐาน → ต้นทุน $20 + มาร์กอัป 25% = <strong>$25</strong> · ข้อเสีย: ไม่สนใจอุปสงค์และคู่แข่ง</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Break-Even Pricing</p>
+                        <p class="text-sm text-muted mt-1">กำหนดราคาเพื่อถึงจุดคุ้มทุน · <strong>BE Volume = FC ÷ (Price − VC)</strong> · ตัวอย่าง: $10,000 ÷ ($20−$10) = <strong>1,000 หน่วย</strong></p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Competition-Based Pricing</p>
+                        <p class="text-sm text-muted mt-1">ตรวจสอบกลยุทธ์คู่แข่ง → ราคาคู่แข่ง → สิ่งที่คู่แข่งมี → กำหนดราคา</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Target Costing</p>
+                        <p class="text-sm text-muted mt-1"><strong>เริ่มจากราคาขาย</strong> แล้วกำหนดเป้าหมายต้นทุน · Target Cost = Selling Price − Desired Profit · $100 − $20 = <strong>$80</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Market Types -->
+            <div class="section-card fade-in" id="l07-4">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">4. การกำหนดราคาตามลักษณะตลาด</h3>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead><tr><th>ตลาด</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="key-term text-xs">Pure Competition</span></td><td>ซื้อขายมาก สินค้าสม่ำเสมอ <strong>ตลาดกำหนดราคา</strong></td><td>เกษตรกรขายมะเขือเทศ</td></tr>
+                            <tr><td><span class="key-term text-xs">Monopolistic Competition</span></td><td>ซื้อขายมาก <strong>ผลิตภัณฑ์แตกต่าง</strong> ช่วงราคากว้าง</td><td>ร้านเบอร์เกอร์หลายราคา</td></tr>
+                            <tr><td><span class="key-term text-xs">Oligopolistic</span></td><td>ผู้ขายน้อย <strong>ไวต่อกลยุทธ์กัน</strong> ราคาคล้ายกัน</td><td>โทรศัพท์มือถือ $80, $82</td></tr>
+                            <tr><td><span class="key-term text-xs">Pure Monopoly</span></td><td>ผู้ขายเดียว <strong>กำหนดราคาเอง</strong></td><td>สาธารณูปโภค (น้ำ)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 5. Strategies -->
+            <div class="section-card fade-in" id="l07-5">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">5. Pricing Strategies</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-2 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Market-Skimming</p>
+                        <p class="text-sm text-emerald-900 leading-relaxed">ราคา<strong>สูงในตอนแรก</strong> แล้วลดค่อยๆ · เหมาะ: เทคโนโลยีใหม่ แข่งขันจำกัด</p>
+                        <p class="text-xs text-emerald-700 mt-2">เช่น $1,200 → $999</p>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-2 text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Market-Penetration</p>
+                        <p class="text-sm text-blue-900 leading-relaxed">ราคา<strong>ต่ำในตอนแรก</strong> ดึงลูกค้ามาก คว้าแบ่งตลาด · เหมาะ: แข่งสูง ไวราคา</p>
+                        <p class="text-xs text-blue-700 mt-2">เช่น สตรีมมิ่ง $5/เดือน</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Product Mix Pricing -->
+            <div class="section-card fade-in" id="l07-6">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">6. Product Mix Pricing</h3>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead><tr><th>ประเภท</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="key-term text-xs">Product Line</span></td><td>ราคาขั้นตอนในบรรทัด</td><td>$199, $299, $399</td></tr>
+                            <tr><td><span class="key-term text-xs">Optional Product</span></td><td>สินค้าเสริมจับคู่หลัก</td><td>แล็ปท็อป + เมาส์ $25</td></tr>
+                            <tr><td><span class="key-term text-xs">Captive Product</span></td><td>ต้องใช้กับหลัก</td><td>เครื่องพิมพ์ $149 + หมึก $40</td></tr>
+                            <tr><td><span class="key-term text-xs">By-Product</span></td><td>ผลพลอยได้ ลดราคาหลัก</td><td>นม + อาหารสัตว์</td></tr>
+                            <tr><td><span class="key-term text-xs">Product Bundle</span></td><td>ขายรวมชุด ราคาลด</td><td>สตรีมมิ่ง+เกม $39.99/เดือน</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 7. Price Adjustments -->
+            <div class="section-card fade-in" id="l07-7">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">7. Price Adjustment Strategies</h3>
+                <div class="space-y-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Discount & Allowance</p>
+                        <p class="text-sm text-muted mt-1">ลดราคาตรงช่วงเวลา/ปริมาณ (ลด 20%, ซื้อ 3 แถม 1) · Allowance = เงินส่วนลดให้ผู้ค้าปลีก</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Segmented Pricing</p>
+                        <p class="text-sm text-muted mt-1">ขาย 2 ราคาขึ้น โดยความต่างไม่ได้มาจากต้นทุน</p>
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <div class="text-xs text-muted bg-bg rounded-lg p-2"><strong>Customer-Segment:</strong> ส่วนลดนักศึกษา</div>
+                            <div class="text-xs text-muted bg-bg rounded-lg p-2"><strong>Product-Form:</strong> Premium vs Basic</div>
+                            <div class="text-xs text-muted bg-bg rounded-lg p-2"><strong>Location-Based:</strong> รีสอร์ท vs เมือง</div>
+                            <div class="text-xs text-muted bg-bg rounded-lg p-2"><strong>Time-Based:</strong> วันหยุด vs ธรรมดา</div>
+                        </div>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Psychological Pricing</p>
+                        <p class="text-sm text-muted mt-1">$19.99 แทน $20 · <strong>Reference Prices</strong> = ราคาที่ลูกค้าเก็บไว้ในใจอ้างอิง</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Promotional Pricing</p>
+                        <p class="text-sm text-muted mt-1">ราคาต่ำกว่าที่ระบุชั่วคราว (BOGO, 50% OFF)</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Geographical Pricing</p>
+                        <p class="text-sm text-muted mt-1">FOB-origin · Uniform-delivered · Zone · Base-point · Freight-absorption</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Dynamic Pricing</p>
+                        <p class="text-sm text-muted mt-1">ปรับราคาอย่างต่อเนื่องตามความต้องการ เช่น แอปแท็กซี่ โรงแรม อีคอมเมิร์ซ</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">International Pricing</p>
+                        <p class="text-sm text-muted mt-1">ราคาต่างกันตามประเทศ — พิจารณา: รายได้/เงินตรา · อุปสงค์ · ภาษี/กฎหมาย</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8-9. Response & Public Policy -->
+            <div class="section-card fade-in" id="l07-8">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">8-9. ตอบสนองคู่แข่ง & นโยบายสาธารณะ</h3>
+                <p class="text-sm text-muted mb-3">ถ้าคู่แข่งลดราคา ให้ถามตัวเอง 3 ขั้น:</p>
+                <div class="flex flex-wrap items-center gap-1 text-xs font-medium mb-5">
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg">คู่แข่งลดราคาจริงหรือ?</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg">กระทบต่อเราหรือ?</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg">ดำเนินการได้ไหม?</span>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">นโยบายสาธารณะที่ต้องรู้</p>
+                <div class="grid sm:grid-cols-2 gap-2">
+                    <div class="bg-tag rounded-lg p-3 text-sm"><span class="key-term text-xs">Price-Fixing</span> — ผู้ผลิตขัดแย้งกำหนดราคา</div>
+                    <div class="bg-tag rounded-lg p-3 text-sm"><span class="key-term text-xs">Predatory Pricing</span> — ตั้งราคาต่ำเจตนาทำลายคู่แข่ง</div>
+                    <div class="bg-tag rounded-lg p-3 text-sm"><span class="key-term text-xs">Retail Price Maintenance</span> — บังคับรักษาราคาขั้นต่ำ</div>
+                    <div class="bg-tag rounded-lg p-3 text-sm"><span class="key-term text-xs">Deceptive Pricing</span> — หลอกลวงราคาเดิมสูง แล้วลด</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- LECTURE 08 -->
+        <!-- ============================================ -->
+        <div class="lecture-section mt-16" data-lecture="8">
+            <div class="flex items-center gap-3 mb-6 fade-in">
+                <div class="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center">
+                    <span class="font-outfit font-bold text-violet-700 text-sm">08</span>
+                </div>
+                <div>
+                    <h2 class="font-outfit font-bold text-xl text-accent">Marketing Channels</h2>
+                    <p class="text-muted text-xs font-outfit">Distribution, VMS, Disintermediation</p>
+                </div>
+            </div>
+
+            <!-- 1. ความหมาย -->
+            <div class="section-card fade-in" id="l08-1">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">1. ความหมายและความสำคัญ</h3>
+                <div class="space-y-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Marketing Channel</p>
+                        <p class="text-sm text-muted mt-1">กลุ่มองค์กรพึ่งพากัน เพื่อทำให้สินค้า/บริการพร้อมใช้งานโดยผู้บริโภค</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Demand Chain</p>
+                        <p class="text-sm text-muted mt-1">มุมมอง "รับรู้และตอบสนอง" ต่อตลาด</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Value Delivery Network</p>
+                        <p class="text-sm text-muted mt-1">บริษัท + ซัพพลายเออร์ + ตัวแทน + ลูกค้า ร่วมเพิ่มประสิทธิภาพทั้งระบบ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. หน้าที่ -->
+            <div class="section-card fade-in" id="l08-2">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">2. หน้าที่ Channel Members — <span class="text-violet-600">9 ข้อ (สอบบ่อย)</span></h3>
+                <div class="grid sm:grid-cols-3 gap-2">
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Information</p><p class="text-xs text-muted">รวบรวมข้อมูลตลาด</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Promotion</p><p class="text-xs text-muted">เผยแพร่สื่อโน้มน้าว</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Contact</p><p class="text-xs text-muted">ค้นหาและสื่อสารผู้ซื้อ</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Matching</p><p class="text-xs text-muted">ปรับสินค้าตรงความต้องการ</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Negotiation</p><p class="text-xs text-muted">ตกลงราคาและเงื่อนไข</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Physical Distribution</p><p class="text-xs text-muted">ขนส่งและเก็บสินค้า</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Financing</p><p class="text-xs text-muted">หาใช้เงินทุนครอบคลุมต้นทุน</p></div>
+                    <div class="bg-tag rounded-xl p-3 text-center"><p class="text-sm font-medium">Risk Taking</p><p class="text-xs text-muted">รับความเสี่ยงจากการดำเนินงาน</p></div>
+                </div>
+                <p class="text-xs text-muted text-center mt-2">(มี 8 ข้อในเนื้อหาต้นฉบับ — แต่บางแหล่งรวมเป็น 9)</p>
+            </div>
+
+            <!-- 3-4. Channel Levels & Conflict -->
+            <div class="section-card fade-in" id="l08-3">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">3-4. Channel Levels & Conflict</h3>
+                <p class="text-sm text-muted mb-3"><span class="key-term text-xs">Channel level</span> = ชั้นคนกลางที่นำกรรมสิทธิ์ใกล้ผู้ซื้อขั้นสุดท้าย · ใช้คนกลาง<strong>ลดจำนวนธุรกรรม</strong></p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#DC2626;background:#FEE2E2;color:#991B1B">Horizontal Conflict</p>
+                        <p class="text-sm text-red-900 mt-1">ระหว่างกิจการ<strong>ระดับชั้นเดียวกัน</strong> เช่น ร้านค้าปลีก 2 แห่งลดราคาตัดกัน</p>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#EA580C;background:#FFEDD5;color:#9A3412">Vertical Conflict</p>
+                        <p class="text-sm text-orange-900 mt-1">ระหว่างคน<strong>ต่างระดับชั้น</strong> เช่น ผู้ค้าส่ง vs ค้าปลีก เรื่องราคา</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. ระบบกระจาย -->
+            <div class="section-card fade-in" id="l08-4">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">5. ประเภทระบบการกระจายสินค้า <span class="text-violet-600">(สอบบ่อย)</span></h3>
+                
+                <div class="bg-tag rounded-xl p-4 mb-3">
+                    <p class="key-term inline-block mb-1 text-xs">Conventional Distribution Channel</p>
+                    <p class="text-sm text-muted mt-1">ผู้ผลิต ค้าส่ง ค้าปลีก <strong>เป็นอิสระจากกัน</strong> ดำเนินงานแยกต่างหาก</p>
+                </div>
+
+                <p class="font-outfit font-semibold text-sm text-accent mb-2">Vertical Marketing System (VMS) — ผู้ผลิต ค้าส่ง ค้าปลีก <strong>เป็นระบบเดียว</strong></p>
+                <div class="grid gap-3 mb-4">
+                    <div class="bg-violet-50 border border-violet-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Corporate VMS</p>
+                        <p class="text-sm text-violet-900 mt-1">รวมภายใต้<strong>ความเป็นเจ้าของเดียวกัน</strong> · เช่น Coca-Cola, Apple, Walmart</p>
+                    </div>
+                    <div class="bg-violet-50 border border-violet-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Contractual VMS</p>
+                        <p class="text-sm text-violet-900 mt-1">กิจการอิสระ<strong>รวมตัวผ่านสัญญา</strong> · เช่น แฟรนไชส์ McDonald's, 7-Eleven</p>
+                    </div>
+                    <div class="bg-violet-50 border border-violet-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Administered VMS</p>
+                        <p class="text-sm text-violet-900 mt-1">ประสานผ่าน<strong>ขนาดและอำนาจ</strong> ของฝ่ายใดฝ่ายหนึ่ง · เช่น Walmart, P&G</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Horizontal Marketing System</p>
+                        <p class="text-sm text-muted mt-1">บริษัท 2+ ระดับเดียวกัน<strong>ร่วมทำการตลาด</strong> (อาจเป็นคู่แข่ง)</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Multi-channel Distribution</p>
+                        <p class="text-sm text-muted mt-1">บริษัทเดียว ตั้งช่องทาง <strong>2+ ช่องทาง</strong> เข้าถึงหลายกลุ่ม</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Disintermediation -->
+            <div class="section-card fade-in" id="l08-5">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">6. Disintermediation</h3>
+                <div class="bg-violet-50 border border-violet-200 rounded-xl p-4 mb-3">
+                    <p class="key-term inline-block mb-1 text-xs" style="border-color:#7C3AED;background:#EDE9FE;color:#5B21B6">Disintermediation</p>
+                    <p class="text-sm text-violet-900 mt-1"><strong>ตัดคนกลางออก</strong>จากช่องทาง หรือแทนที่คนกลางแบบดั้งเดิมด้วยรูปแบบใหม่</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                    <p class="text-sm text-amber-900"><span class="iconify inline-block mr-1" data-icon="lucide:lightbulb" data-width="14"></span><strong>เคล็ดลับสอบ:</strong> โฟกัส ความหมาย Channel · หน้าที่ 9 ข้อ · VMS 3 ประเภท · Disintermediation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- LECTURE 09 -->
+        <!-- ============================================ -->
+        <div class="lecture-section mt-16" data-lecture="9">
+            <div class="flex items-center gap-3 mb-6 fade-in">
+                <div class="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center">
+                    <span class="font-outfit font-bold text-rose-700 text-sm">09</span>
+                </div>
+                <div>
+                    <h2 class="font-outfit font-bold text-xl text-accent">Communications Strategy</h2>
+                    <p class="text-muted text-xs font-outfit">Promotion Mix, IMC, Push vs Pull</p>
+                </div>
+            </div>
+
+            <!-- 1. Promotion Mix -->
+            <div class="section-card fade-in" id="l09-1">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">1. Promotion Mix — <span class="text-rose-600">5 เครื่องมือ (สอบบ่อย)</span></h3>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3 bg-tag rounded-xl p-4">
+                        <span class="step-num" style="background:#E11D48">A</span>
+                        <div><span class="key-term text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Advertising</span><p class="text-sm text-muted mt-1">เข้าถึงคนมาก ต้นทุนต่อคนต่ำ แต่โน้มน้าวได้น้อยกว่าขายตรง</p></div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-tag rounded-xl p-4">
+                        <span class="step-num" style="background:#E11D48">P</span>
+                        <div><span class="key-term text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Personal Selling</span><p class="text-sm text-muted mt-1">ประสิทธิภาพสูงในบางขั้น แต่<strong>ต้นทุนสูง</strong></p></div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-tag rounded-xl p-4">
+                        <span class="step-num" style="background:#E11D48">S</span>
+                        <div><span class="key-term text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Sales Promotion</span><p class="text-sm text-muted mt-1">สิ่งจูงใจระยะสั้น ลดราคา ของแถม · ผล<strong>อยู่ได้ไม่นาน</strong></p></div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-tag rounded-xl p-4">
+                        <span class="step-num" style="background:#E11D48">R</span>
+                        <div><span class="key-term text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Public Relations</span><p class="text-sm text-muted mt-1">สร้างสัมพันธ์กับสาธารณะ <strong>น่าเชื่อถือสูง</strong> แต่ถูกใช้ไม่เต็มที่</p></div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-tag rounded-xl p-4">
+                        <span class="step-num" style="background:#E11D48">D</span>
+                        <div><span class="key-term text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Direct Marketing</span><p class="text-sm text-muted mt-1">เจาะจงกลุ่มเป้าหมาย ไม่เป็นสาธารณะ · อีเมล แคตตาล็อก</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-3. Changes & IMC -->
+            <div class="section-card fade-in" id="l09-2">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">2-3. การเปลี่ยนแปลง & IMC</h3>
+                <div class="bg-tag rounded-xl p-4 mb-3">
+                    <p class="key-term inline-block mb-1 text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Integrated Marketing Communications (IMC)</p>
+                    <p class="text-sm text-muted mt-1">ผสมผสานเครื่องมือส่งเสริมการตลาดอย่าง <strong>careful blend</strong> เพื่อความสอดคล้องและมีประสิทธิภาพสูงสุด</p>
+                </div>
+                <p class="text-sm text-muted leading-relaxed">ผู้บริโภคค้นหาข้อมูลออนไลน์ก่อนซื้อ · บริษัทใช้แคมเปญเจาะจง + personalize · สื่อสารผ่านโซเชียล อีเมล แชทบอท</p>
+            </div>
+
+            <!-- 4. 6 ขั้นตอน -->
+            <div class="section-card fade-in" id="l09-3">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">4. กระบวนการสื่อสาร — <span class="text-rose-600">6 ขั้นตอน</span></h3>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">1</span>
+                        <div><strong class="text-sm">Identifying Target Audience</strong> <span class="text-muted text-sm">— ระบุกลุ่มเป้าหมาย ส่งผลต่อทุกการตัดสินใจ</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">2</span>
+                        <div><strong class="text-sm">Determining Objectives</strong> <span class="text-muted text-sm">— กำหนดวัตถุประสงค์การสื่อสาร</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">3</span>
+                        <div><strong class="text-sm">Designing Message</strong> <span class="text-muted text-sm">— ออกแบบสาร</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">4</span>
+                        <div><strong class="text-sm">Choosing Media</strong> <span class="text-muted text-sm">— <strong>Personal:</strong> ตรงระหว่างบุคคล, WOM · <strong>Non-personal:</strong> สื่อหลัก, atmospheres, อีเวนต์</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">5</span>
+                        <div><strong class="text-sm">Selecting Message Source</strong> <span class="text-muted text-sm">— แหล่งที่<strong>น่าเชื่อถือสูง</strong>โน้มน้าวได้ดีกว่า</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="step-num" style="background:#E11D48">6</span>
+                        <div><strong class="text-sm">Collecting Feedback</strong> <span class="text-muted text-sm">— วิจัยผลกระทบต่อกลุ่มเป้าหมาย</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Buyer-readiness -->
+            <div class="section-card fade-in" id="l09-4">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">5. Buyer-Readiness Stages</h3>
+                <div class="flex flex-wrap items-center gap-1 text-sm font-medium">
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-xl">การรับรู้</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-xl">การรู้จัก</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-xl">ความชอบ</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-xl">ความเชื่อมั่น</span>
+                    <span class="chain-arrow">→</span>
+                    <span class="bg-rose-600 text-white px-4 py-2 rounded-xl">การซื้อ</span>
+                </div>
+            </div>
+
+            <!-- 6. Budget -->
+            <div class="section-card fade-in" id="l09-5">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">6. วิธีกำหนดงบประมาณ</h3>
+                <div class="space-y-3">
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Percentage-of-Sales</p>
+                        <p class="text-sm text-muted mt-1">ตั้งงบเป็น % ของยอดขายปัจจุบัน/คาดการณ์</p>
+                    </div>
+                    <div class="bg-tag rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs">Competitive-Parity</p>
+                        <p class="text-sm text-muted mt-1">ตั้งงบเท่ากับคู่แข่ง</p>
+                    </div>
+                    <div class="bg-rose-50 border border-rose-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-1 text-xs" style="border-color:#E11D48;background:#FFE4E6;color:#9F1239">Objective-and-Task <span class="text-[10px] font-normal">(มีประสิทธิภาพที่สุด)</span></p>
+                        <p class="text-sm text-rose-900 mt-1">กำหนดวัตถุประสงค์ → กำหนดงาน → ประมาณค่าใช้จ่าย → รวมเป็นงบ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Push vs Pull -->
+            <div class="section-card fade-in" id="l09-6">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">7. Push vs Pull Strategy <span class="text-rose-600">(สอบบ่อย)</span></h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-2 text-xs" style="border-color:#2563EB;background:#DBEAFE;color:#1E40AF">Push Strategy</p>
+                        <div class="flex flex-wrap items-center gap-1 text-xs mt-2 mb-2">
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded">ผู้ผลิต</span>
+                            <span class="chain-arrow">→</span>
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded">คนกลาง</span>
+                            <span class="chain-arrow">→</span>
+                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded">ผู้บริโภค</span>
+                        </div>
+                        <p class="text-xs text-blue-800">ใช้<strong>พนักงานขาย + ส่งเสริมค้า</strong> ดันสินค้าผ่านช่องทาง</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                        <p class="key-term inline-block mb-2 text-xs" style="border-color:#059669;background:#D1FAE5;color:#065F46">Pull Strategy</p>
+                        <div class="flex flex-wrap items-center gap-1 text-xs mt-2 mb-2">
+                            <span class="bg-emerald-200 text-emerald-800 px-2 py-1 rounded">ผู้บริโภค</span>
+                            <span class="chain-arrow">←</span>
+                            <span class="bg-emerald-200 text-emerald-800 px-2 py-1 rounded">คนกลาง</span>
+                            <span class="chain-arrow">←</span>
+                            <span class="bg-emerald-200 text-emerald-800 px-2 py-1 rounded">ผู้ผลิต</span>
+                        </div>
+                        <p class="text-xs text-emerald-800">ใช้<strong>โฆษณา + ส่งเสริมผู้บริโภค</strong> สร้างความต้องการ ดึงสินค้า</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Socially Responsible -->
+            <div class="section-card fade-in" id="l09-7">
+                <h3 class="font-outfit font-semibold text-lg text-accent mb-4">8. Socially Responsible Communication</h3>
+                <p class="text-sm text-muted leading-relaxed">การสื่อสารการตลาดต้อง<strong>รับผิดชอบต่อสังคม</strong> ไม่หลอกลวง ไม่ละเมิดจริยธรรม</p>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-3">
+                    <p class="text-sm text-amber-900"><span class="iconify inline-block mr-1" data-icon="lucide:lightbulb" data-width="14"></span><strong>เคล็ดลับสอบ:</strong> โฟกัส 5 องค์ประกอบ Promotion Mix · Push vs Pull · Objective-and-Task · 6 ขั้นตอนสื่อสาร</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-20 pt-8 border-t border-border text-center fade-in">
+            <p class="text-xs text-muted font-outfit">Marketing Notes — สรุปเนื้อหาเตรียมออกสอบ</p>
+            <p class="text-xs text-muted/60 mt-1">Lecture 05–09 · Principles of Marketing</p>
+        </div>
+
+    </div>
+</main>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0})">
+    <span class="iconify" data-icon="lucide:arrow-up" data-width="18"></span>
+</button>
+
+<script>
+// ===================== NAV STRUCTURE =====================
+const navData = [
+    { id: 'L05', label: 'L05 — Building Customer Value', color: 'amber', subs: [
+        { id: 'l05-1', label: 'Product vs Service' },
+        { id: 'l05-2', label: 'ระดับสินค้า (3 ระดับ)' },
+        { id: 'l05-3', label: 'ประเภทสินค้า' },
+        { id: 'l05-4', label: 'ประเภท Marketing' },
+        { id: 'l05-5', label: 'Product Decisions' },
+        { id: 'l05-6', label: 'Service Marketing (IIVP)' },
+        { id: 'l05-7', label: 'Branding' },
+    ]},
+    { id: 'L06', label: 'L06 — Product Life Cycle', color: 'blue', subs: [
+        { id: 'l06-1', label: 'NPD คืออะไร' },
+        { id: 'l06-2', label: 'ขั้นตอน NPD 8 ขั้น' },
+        { id: 'l06-3', label: 'บริหาร NPD 3 แนวทาง' },
+        { id: 'l06-4', label: 'PLC 5 ระยะ' },
+        { id: 'l06-5', label: 'กลยุทธ์ตามระยะ PLC' },
+        { id: 'l06-6', label: 'PLC รูปแบบอื่น' },
+    ]},
+    { id: 'L07', label: 'L07 — Pricing Strategies', color: 'emerald', subs: [
+        { id: 'l07-1', label: 'ราคาคืออะไร' },
+        { id: 'l07-2', label: 'พิจารณากำหนดราคา' },
+        { id: 'l07-3', label: 'วิธีกำหนดราคา 4 แบบ' },
+        { id: 'l07-4', label: 'ตลาด 4 ประเภท' },
+        { id: 'l07-5', label: 'Skimming vs Penetration' },
+        { id: 'l07-6', label: 'Product Mix Pricing' },
+        { id: 'l07-7', label: 'Price Adjustment 7 แบบ' },
+        { id: 'l07-8', label: 'ตอบสนองคู่แข่ง & นโยบาย' },
+    ]},
+    { id: 'L08', label: 'L08 — Marketing Channels', color: 'violet', subs: [
+        { id: 'l08-1', label: 'ความหมาย' },
+        { id: 'l08-2', label: 'หน้าที่ 9 ข้อ' },
+        { id: 'l08-3', label: 'Channel Levels & Conflict' },
+        { id: 'l08-4', label: 'ระบบกระจาย (VMS)' },
+        { id: 'l08-5', label: 'Disintermediation' },
+    ]},
+    { id: 'L09', label: 'L09 — Communications', color: 'rose', subs: [
+        { id: 'l09-1', label: 'Promotion Mix 5 อย่าง' },
+        { id: 'l09-2', label: 'IMC' },
+        { id: 'l09-3', label: 'กระบวนการสื่อสาร 6 ขั้น' },
+        { id: 'l09-4', label: 'Buyer-Readiness Stages' },
+        { id: 'l09-5', label: 'งบประมาณ 3 วิธี' },
+        { id: 'l09-6', label: 'Push vs Pull' },
+        { id: 'l09-7', label: 'Socially Responsible' },
+    ]},
+];
+
+function buildNav(container) {
+    container.innerHTML = '';
+    navData.forEach(lecture => {
+        const mainLink = document.createElement('div');
+        mainLink.className = 'nav-link font-outfit font-medium text-[13px]';
+        mainLink.textContent = lecture.label;
+        mainLink.dataset.target = lecture.id;
+        mainLink.onclick = () => {
+            const el = document.querySelector(`[data-lecture="${lecture.id.replace('L','')}"]`);
+            if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if(window.innerWidth < 1024) toggleMobileMenu();
+        };
+        container.appendChild(mainLink);
+
+        lecture.subs.forEach(sub => {
+            const subLink = document.createElement('div');
+            subLink.className = 'sub-nav-link';
+            subLink.textContent = sub.label;
+            subLink.onclick = () => {
+                const el = document.getElementById(sub.id);
+                if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if(window.innerWidth < 1024) toggleMobileMenu();
+            };
+            container.appendChild(subLink);
+        });
+    });
+}
+
+buildNav(document.getElementById('sidebarNav'));
+buildNav(document.getElementById('mobileNavContent'));
+
+// ===================== ACTIVE NAV TRACKING =====================
+const sectionEls = document.querySelectorAll('.section-card[id]');
+const navLinks = document.querySelectorAll('#sidebarNav .nav-link');
+const subNavLinks = document.querySelectorAll('#sidebarNav .sub-nav-link');
+
+function updateActiveNav() {
+    let current = '';
+    sectionEls.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if(rect.top <= 120) current = sec.id;
+    });
+    
+    navLinks.forEach(l => l.classList.remove('active'));
+    subNavLinks.forEach(l => { l.style.color = ''; l.style.fontWeight = ''; });
+
+    if(current) {
+        const sub = [...subNavLinks].find(l => {
+            const matchingSub = navData.flatMap(n => n.subs).find(s => s.id === current);
+            return l.textContent === matchingSub?.label;
+        });
+        if(sub) { sub.style.color = '#1C1917'; sub.style.fontWeight = '600'; }
+
+        const lectureNum = current.replace('l','');
+        const lecId = 'L' + lectureNum.substring(0,2);
+        const mainLink = [...navLinks].find(l => l.dataset.target === lecId);
+        if(mainLink) mainLink.classList.add('active');
+    }
+}
+
+// ===================== SCROLL EFFECTS =====================
+const progressBar = document.getElementById('progressBar');
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    // Progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+
+    // Back to top
+    backToTop.classList.toggle('show', scrollTop > 400);
+
+    // Active nav
+    updateActiveNav();
+}, { passive: true });
+
+// ===================== FADE IN ANIMATION =====================
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// ===================== SEARCH =====================
+function handleSearch(query) {
+    const resultsEl = document.getElementById('searchResults');
+    const sections = document.querySelectorAll('.lecture-section');
+    
+    if(!query.trim()) {
+        resultsEl.classList.add('hidden');
+        sections.forEach(s => s.style.display = '');
+        return;
+    }
+
+    const q = query.toLowerCase();
+    const matches = [];
+    
+    sections.forEach(section => {
+        const cards = section.querySelectorAll('.section-card');
+        let sectionHasMatch = false;
+        cards.forEach(card => {
+            if(card.textContent.toLowerCase().includes(q)) {
+                sectionHasMatch = true;
+                matches.push({
+                    id: card.id,
+                    text: card.textContent.substring(0, 120) + '...',
+                    lecture: section.dataset.lecture
+                });
+            }
+        });
+        section.style.display = sectionHasMatch ? '' : 'none';
+    });
+
+    if(matches.length > 0) {
+        resultsEl.classList.remove('hidden');
+        resultsEl.innerHTML = `<p class="text-sm text-muted mb-3">พบ ${matches.length} ผลลัพธ์</p>` +
+            matches.map(m => `<div class="bg-white border border-border rounded-xl p-4 mb-2 cursor-pointer hover:border-stone-300 transition-colors" onclick="document.getElementById('${m.id}').scrollIntoView({behavior:'smooth'});document.getElementById('searchResults').classList.add('hidden');">
+                <p class="text-xs text-muted font-outfit mb-1">Lecture ${m.lecture}</p>
+                <p class="text-sm leading-relaxed">${m.text}</p>
+            </div>`).join('');
+    } else {
+        resultsEl.classList.remove('hidden');
+        resultsEl.innerHTML = '<p class="text-sm text-muted">ไม่พบผลลัพธ์</p>';
+    }
+}
+
+// ===================== MOBILE MENU =====================
+function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && document.getElementById('mobileMenu').classList.contains('open')) {
+        toggleMobileMenu();
+    }
+});
+</script>
+
+</body>
+</html>
