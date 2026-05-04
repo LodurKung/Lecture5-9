@@ -8,13 +8,14 @@
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         outfit: ['Outfit', 'sans-serif'],
-                        sarabun: ['Sarabun', 'sans-serif'],
+                        sarabun: ['Prompt', 'sans-serif'],
                     },
                     colors: {
                         bg: '#FAFAF9',
@@ -174,9 +175,9 @@
         .mobile-nav { display: none; }
 
         @media (max-width: 1023px) {
-            .desktop-sidebar { display: none; }
+            .desktop-sidebar { display: none !important; }
             .mobile-nav { display: flex; }
-            .main-content { margin-left: 0 !important; }
+            .main-content { margin-left: 0 !important; padding-top: 60px; }
         }
 
         .fade-in {
@@ -304,7 +305,7 @@
 <div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMobileMenu()">
     <div class="mobile-menu-panel" id="mobileMenuPanel">
         <div class="flex items-center justify-between mb-6">
-            <span class="font-outfit font-bold text-lg">เนื้อหาทั้งหมด</span>
+            <span class="font-outfit font-bold text-lg">All content</span>
             <button onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-tag transition-colors">
                 <span class="iconify" data-icon="lucide:x" data-width="20"></span>
             </button>
@@ -1380,20 +1381,31 @@ function updateActiveNav() {
         if(rect.top <= 120) current = sec.id;
     });
     
-    navLinks.forEach(l => l.classList.remove('active'));
-    subNavLinks.forEach(l => { l.style.color = ''; l.style.fontWeight = ''; });
+    // เลือก Link ทั้งจาก Sidebar และ Mobile Menu
+    const allNavLinks = document.querySelectorAll('#sidebarNav .nav-link, #mobileNavContent .nav-link');
+    const allSubNavLinks = document.querySelectorAll('#sidebarNav .sub-nav-link, #mobileNavContent .sub-nav-link');
+
+    allNavLinks.forEach(l => l.classList.remove('active'));
+    allSubNavLinks.forEach(l => { l.style.color = ''; l.style.fontWeight = ''; });
 
     if(current) {
-        const sub = [...subNavLinks].find(l => {
-            const matchingSub = navData.flatMap(n => n.subs).find(s => s.id === current);
-            return l.textContent === matchingSub?.label;
+        // จัดการไฮไลท์สีดำให้เมนูหลัก
+        const lectureNum = current.replace('l','').substring(0,2);
+        const lecId = 'L' + lectureNum;
+        allNavLinks.forEach(l => {
+            if(l.dataset.target === lecId) l.classList.add('active');
         });
-        if(sub) { sub.style.color = '#1C1917'; sub.style.fontWeight = '600'; }
 
-        const lectureNum = current.replace('l','');
-        const lecId = 'L' + lectureNum.substring(0,2);
-        const mainLink = [...navLinks].find(l => l.dataset.target === lecId);
-        if(mainLink) mainLink.classList.add('active');
+        // จัดการความหนาของตัวหนังสือให้เมนูย่อย
+        const matchingSub = navData.flatMap(n => n.subs).find(s => s.id === current);
+        if(matchingSub) {
+            allSubNavLinks.forEach(l => {
+                if(l.textContent === matchingSub.label) {
+                    l.style.color = '#1C1917';
+                    l.style.fontWeight = '600';
+                }
+            });
+        }
     }
 }
 
@@ -1429,6 +1441,7 @@ document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
 // ===================== SEARCH =====================
 function handleSearch(query) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const resultsEl = document.getElementById('searchResults');
     const sections = document.querySelectorAll('.lecture-section');
     
